@@ -31,6 +31,7 @@ function shiftDown(a, start, end) {
    }
    
 }
+/* O(lg n) */
 function heapify(a, count) {
    var start = parseInt((count - 1) / 2);
    while(start >= 0) {
