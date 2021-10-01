@@ -1,4 +1,5 @@
-Singleton = (function() {
+const Singleton = (function() {
+
   let _singleton;
   function getSingleton() {
       if (!_singleton) {
@@ -7,20 +8,22 @@ Singleton = (function() {
       return _singleton;
 
   }
-  class RokuClass {
+  class SingletonClass {
       constructor() {
           if(_singleton) {
              return _singleton;
           }
+
       }
       static getInstance = () => {
          return getSingleton();
       }
   }
-
+  // warm up
+  SingletonClass.getInstance();
   return SingletonClass;
 
 })();
 
-console.log(new Singleton() === new Singleton());
 console.log(new Singleton() === Singleton.getInstance());
+console.log(new Singleton() === new Singleton());
